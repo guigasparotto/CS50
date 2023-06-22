@@ -42,3 +42,55 @@ char* allocateMemory(int size) {
 
     return result;
 }
+
+bool compareString(const char *s1, const char *s2) {
+    if (s1 == NULL || s2 == NULL) {
+        return false;
+    }
+
+    int size1 = 0;
+    while (s1[size1] != '\0') {
+        size1++;
+    }
+
+    int size2 = 0;
+    while (s2[size2] != '\0') {
+        size2++;
+    }
+
+    if (size1 != size2) {
+        return false;
+    }
+
+    for (int i = 0; i < size1; i++) {
+        if (*(s1 + i) != *(s2 + i)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+char* copyString(const char *s1) {
+    if (s1 == NULL) {
+        return NULL;
+    }
+
+    int length = (int) strlen(s1);
+    char *copy = malloc(length + 1);
+
+    // checks if malloc failed to allocate memory, this is a serious
+    // issue and might indicate that the computer is out of memory
+    if (copy == NULL) {
+        return NULL;
+    }
+
+    for (int i = 0; i < length; i++) {
+        // *(copy + i) = *(s1 + i)
+        copy[i] = s1[i];
+    }
+
+    // add the null terminator after copying all chars
+    copy[length] = '\0';
+
+    return copy;
+}
