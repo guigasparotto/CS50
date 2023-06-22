@@ -1,0 +1,2 @@
+add_executable(substitution substitution.c)
+target_link_libraries(substitution utils)

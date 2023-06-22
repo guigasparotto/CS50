@@ -1,0 +1,2 @@
+add_executable(readability readability.c)
+target_link_libraries(readability utils)
