@@ -10,6 +10,8 @@ add_subdirectory(readability)
 add_subdirectory(substitution)
 add_subdirectory(search-algos)
 add_subdirectory(sort-algos)
+add_subdirectory(reverse)
+add_subdirectory(data-structures)
 
 # Add a custom target that depends on your other targets
 add_custom_target(CS50 ALL
